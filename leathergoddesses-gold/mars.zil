@@ -246,7 +246,7 @@ just looks at you dumbly." CR>)>)
 normally associates with princesses." CR>)
 		      (T
 		       <TELL "The princess, once acute, is now cute." CR>)>)
-	       (<VERB? TAKE KISS FUCK TOUCH BEND>
+	       (<VERB? TAKE KISS BUTTERFLY TOUCH BEND>
 		<TELL
 "Mitre growls, \"Keep " 'HANDS "s off my daughter.\"" CR>)
 	       (<VERB? MARRY>
@@ -1635,7 +1635,7 @@ races of Mars, lies dead at the base of a dune.")
 <ROUTINE MESSENGER-F ()
 	 <COND (<VERB? EXAMINE>
 		<TELL "It's dead. Very dead." CR>)
-	       (<VERB? FUCK KISS>
+	       (<VERB? BUTTERFLY KISS>
 		<TELL
 "Is there even a word for this sort of perverse behavior? Necro-xeno-philia?
 Xeno-necro-philia? Grosso-sicko-philia?" CR>)
@@ -2822,11 +2822,11 @@ only way out is through the catacombs -- if you come back this way with"
 T ,MAP "," T ,HAREM-GUARD "s will...\"" CR>)
 			     (T
 			      <TELL "\"I'm not into that kinky stuff.\"" CR>)>)
-		      (<AND <VERB? KISS SUCK FUCK EAT LICK BLOW TAKE TOUCH>
+		      (<AND <VERB? KISS SUCK BUTTERFLY EAT LICK BLOW TAKE TOUCH>
 			    <EQUAL? ,NAUGHTY-LEVEL 0>
 			    <PRSO? ,ME ,COCK>>
 		       <SETG WINNER ,PROTAGONIST>
-		       <PERFORM ,V?FUCK ,SULTANS-WIFE>
+		       <PERFORM ,V?BUTTERFLY ,SULTANS-WIFE>
 		       <SETG WINNER ,SULTANS-WIFE>
 		       <RTRUE>)
 		      (<AND <VERB? KISS>
@@ -2835,10 +2835,10 @@ T ,MAP "," T ,HAREM-GUARD "s will...\"" CR>)
 		       <PERFORM-PRSA ,SULTANS-WIFE>
 		       <SETG WINNER ,SULTANS-WIFE>
 		       <RTRUE>)
-		      (<AND <VERB? FUCK TAKE>
+		      (<AND <VERB? BUTTERFLY TAKE>
 			    <PRSO? ,ME>>
 		       <SETG WINNER ,PROTAGONIST>
-		       <PERFORM ,V?FUCK ,SULTANS-WIFE>
+		       <PERFORM ,V?BUTTERFLY ,SULTANS-WIFE>
 		       <SETG WINNER ,SULTANS-WIFE>
 		       <RTRUE>)
 		      (<AND <VERB? EAT LICK BLOW SUCK>
@@ -2875,7 +2875,7 @@ said they have pledged their lives and souls to the revolution!\"" CR>)
 		     ,CATACOMBS-OPEN>
 		<TELL
 D ,SULTANS-WIFE " gives you a grand salute. \"For the revolution!\"" CR>)
-	       (<AND <VERB? KISS TOUCH FUCK TAKE>
+	       (<AND <VERB? KISS TOUCH BUTTERFLY TAKE>
 		     <EQUAL? ,NAUGHTY-LEVEL 0>>
 		<TELL
 "Instead, you decide to get to know " D ,SULTANS-WIFE
@@ -2885,7 +2885,7 @@ D ,SULTANS-WIFE " gives you a grand salute. \"For the revolution!\"" CR>)
 " in a stimulating discussion about " <PICK-ONE ,DISCUSSION-TOPICS> CR>)
 	       (<VERB? EAT>
 		<COND (<EQUAL? ,NAUGHTY-LEVEL 0>
-		       <V-FUCK>)
+		       <V-BUTTERFLY>)
 		      (<EQUAL? ,NAUGHTY-LEVEL 1>
 		       <TELL ,MISSIONARY-ONLY>)
 		      (T
@@ -2902,13 +2902,13 @@ D ,SULTANS-WIFE " gives you a grand salute. \"For the revolution!\"" CR>)
 	       (<VERB? KISS TOUCH TAKE>
 		<TELL
 D ,SULTANS-WIFE " moans softly and draws closer to you." CR>)
-	       (<VERB? FUCK>
-		<COND (,WIFE-FUCKED
+	       (<VERB? BUTTERFLY>
+		<COND (,WIFE-BUTTERFLYED
 		       <TELL
 "You shouldn't wear yourself out. [Besides, do you think there's infinite
 room on this disk for long, lurid descriptions of sex acts?]" CR>
 		       <RTRUE>)>
-		<SETG WIFE-FUCKED T>
+		<SETG WIFE-BUTTERFLYED T>
 		<TELL D ,SULTANS-WIFE " draws you into ">
 		<HER-HIS>
 		<TELL " arms. ">
@@ -2961,7 +2961,7 @@ D ,SULTANS-WIFE " is enough to ">
 		<SHE-HE T>
 		<TELL " smells of " <GETP ,HAREM ,P?ODOR> ,PERIOD-CR>)>>
 
-<GLOBAL WIFE-FUCKED <>>
+<GLOBAL WIFE-BUTTERFLYED <>>
 
 <GLOBAL DISCUSSION-TOPICS
 	 <LTABLE 0
